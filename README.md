@@ -2,10 +2,9 @@
 ### 스마일게이트 윈터데브캠프 개인프로젝트 - MSA기반 인증 서버 개발
 
 MSA 아키텍처를 기반으로한 인증 서버입니다. <br>
-프론트 : React (미 구현) <br>
+프론트 : React <br>
 백엔드 : Spring Boot(User 서버 + Order 서버 + Discovery 서버 + Gateway 서버)<br>
 데이터베이스 : MySQL <br>
-캐시 : Redis(미구현)<br>
 
 ## 아키텍처
 
@@ -26,13 +25,14 @@ Gateway 서버 : User서버, Order서버로 중계 역할 수행<br>
 
 ## 구현 상황
 
-React를 활용한 프론트 엔드 개발 중 <br>
+react에서 인증 받은 경우만 유저 관리 페이지로 넘어가도록 개발 중 <br>
 JWT 토큰 Refresh 토큰 관련 개발 중 <br>
 + 추가로 캐시 구현 고려 
 
 ## 궁금점
 1. refresh 토큰의 경우 저장소에 저장해야 하는 것으로 알고 있는데 테이블을 따로 생성해서 사용하는 것인지
-2. Redis를 사용하는 경우 refresh 토큰을 캐시에도 저장하고, DB에 테이블도 따로 만들어서 계속 동기화 하면서 운영하는 것인지
+2. client 측에서 항상 refresh 토큰과 access 토큰을 둘 다 보내야 하는 지 
+3. Redis를 사용하는 경우 refresh 토큰을 캐시에도 저장하고, DB에 테이블도 따로 만들어서 계속 동기화 하면서 운영하는 것인지
 
 ## API 명세
 
