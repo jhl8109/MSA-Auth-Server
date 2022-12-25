@@ -1,0 +1,37 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: user-service
+#  h2:
+  ##    console:
+  ##      enabled: true
+  ##      settings:
+  ##        web-allow-others: true
+  ##      path: /h2-console
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/users?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: lkh6657!@#
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+logging:
+  level:
+    com.example.userservice : DEBUG
+
+token:
+  access_expiration_time: 3600000
+  access_secret: user_token
+  refresh_expiration_time: 3600000
+  refresh_secret: refresh_token
+
