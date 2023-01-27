@@ -14,7 +14,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/users?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&serverTimezone=Asia/Seoul
     username: root
-    password: lkh6657!@#
+    password: pwd
 
 eureka:
   instance:
